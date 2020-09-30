@@ -9,6 +9,7 @@
 <script>
 export default {
   name: "Card",
+  methods: {}
 };
 </script>
 
@@ -19,6 +20,9 @@ export default {
   margin-bottom: 20px;
   box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.3);
   height: 50vh;
-  max-width: 70vh;
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
