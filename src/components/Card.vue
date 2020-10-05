@@ -15,14 +15,17 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  padding: 30px;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 0 0 auto;
   background: #fff;
-  margin-bottom: 20px;
-  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.3);
-  height: 50vh;
-  @media (max-width: 500px) {
-    width: 100%;
-    height: 100%;
-  }
+  max-width: 700px;
+  margin: 80px 0;
+  border-radius: 5px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 </style>

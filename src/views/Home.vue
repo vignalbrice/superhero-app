@@ -4,9 +4,8 @@
     <div class="content">
       <div class="row">
         <div v-for="hero in heroes" :key="hero.id">
-          <div class="four columns card-container">
-            <router-link :to="`details/${hero.id}`">
-              <Card>
+          <div class="six columns card-container">
+              <Card @click.native="onShowDetails(hero.id)">
                 <template v-slot:card-header>
                   <img :src="hero.images.md" class="card-img" />
                 </template>
@@ -23,7 +22,6 @@
                   <p>{{ hero.biography.pusblisher }}</p>
                 </template>
               </Card>
-            </router-link>
           </div>
         </div>
       </div>
@@ -53,12 +51,15 @@ export default {
   },
   methods: {
     onShowDetails(id) {
-      this.$router.push({ path: `/detail/${id}` });
+      this.$router.push({ path: `/detail/${id}`, params: { detailsId : id } });
     }
   }
 };
 </script>
 <style lang="scss" scoped>
+.card {
+  cursor: pointer;
+}
 h3 {
   position: absolute;
   top: 85px;
@@ -73,18 +74,25 @@ h3 {
   }
 }
 .content {
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 100px;
-  padding-left: 15px;
-  padding-right: 15px;
+      display: flex;
+    flex-direction: column;
 }
 .card-img {
-  width: 200px;
-  float: left;
   margin-right: 20px;
   border: 1px solid lightslategray;
-  border-radius: 2px;
+  border-radius: 5px 0 0 5px;
+  width: 200px;
+  flex: 0 0 auto;
+  position: relative;
+img {
+    position: absolute;
+    bottom: 3em;
+    left: 50%;
+    margin-left: -175px;
+    width: 350px;
+    -webkit-box-reflect: below -1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(250, 250, 250, 0.15)));
+  }
 }
 .card-content {
   display: flex;
@@ -96,5 +104,28 @@ h3 {
 a {
   text-decoration: none;
   color: #333;
+}
+@media (max-width: 790px) {
+  body {
+    overflow-x: hidden;
+  }
+  .card {
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .card-img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    img {
+      bottom: 20px;
+      position: relative;
+    }
+  }
+  .card-content {
+    padding: 2em 2em 1em;
+  } 
 }
 </style>
