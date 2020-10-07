@@ -9,17 +9,17 @@ import Header from "./components/Header";
 export default {
   name: "App",
   components: {
-    Header,
-  },
+    Header
+  }
 };
 </script>
 <style lang="scss">
-
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 body {

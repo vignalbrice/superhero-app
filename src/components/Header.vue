@@ -2,6 +2,7 @@
   <div class="header">
     <router-link to="/"><h2>Comics</h2></router-link>
     <div>
+      <li><router-link :to="{path: '/library'}">Library</router-link></li>
       <li><router-link :to="{path: '/about'}">About</router-link></li>
     </div>
   </div>
@@ -32,8 +33,10 @@ export default {
     transition: all 0.1s ease-out;
   }
   div {
-    display: inline;
-    margin: 10px;
+    display: flex;
+    li {
+      margin-left: 10px;
+    }
   }
 }
 
