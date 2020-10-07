@@ -2,15 +2,15 @@
   <div class="header">
     <router-link to="/"><h2>Comics</h2></router-link>
     <div>
-      <li><router-link :to="{path: '/library'}">Library</router-link></li>
-      <li><router-link :to="{path: '/about'}">About</router-link></li>
+      <li><router-link :to="{ path: '/library' }">Library</router-link></li>
+      <li><router-link :to="{ path: '/about' }">About</router-link></li>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
+  name: "Header"
 };
 </script>
 

@@ -23,7 +23,7 @@ const routes = [
     path: "/detail/:id",
     name: "Detail",
     component: () => import("../views/Detail.vue")
-  },
+  }
 ];
 
 const router = new VueRouter({

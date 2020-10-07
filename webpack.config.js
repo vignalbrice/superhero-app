@@ -1,3 +1,5 @@
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
 module.exports = {
   module: {
     rules: [
@@ -7,9 +9,14 @@ module.exports = {
       // AND `<style lang="scss">` blocks in `.vue` files
       {
         test: /\.scss$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader"],
-      },
+        use: ["vue-style-loader", "css-loader", "sass-loader"]
+      }
     ],
-  },
+    plugins: [
+      new WorkboxPlugin.InjectManifest({
+        swSrc: './src/registerServiceWorker.js',
+      })
+    ]
+  }
   // plugin omitted
 };
