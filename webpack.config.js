@@ -1,3 +1,4 @@
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   module: {
@@ -11,6 +12,11 @@ module.exports = {
         use: ["vue-style-loader", "css-loader", "sass-loader"]
       }
     ],
+    plugins: [
+      new WorkboxPlugin.InjectManifest({
+        swSrc: './src/registerServiceWorker.js',
+      })
+    ]
   }
   // plugin omitted
 };
