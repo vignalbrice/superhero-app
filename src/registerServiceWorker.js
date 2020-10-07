@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
-
 import { register } from "register-service-worker";
 
 if (process.env.NODE_ENV === "production") {
