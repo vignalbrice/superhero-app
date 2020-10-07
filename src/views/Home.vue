@@ -42,7 +42,7 @@ export default {
       .then(data => {
         this.heroes = data;
       })
-      .catch(error => console.log(error));
+      .catch(error => alert(error));
   },
   data: () => {
     return {
