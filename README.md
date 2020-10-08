@@ -1,7 +1,7 @@
 # superhero-app
- ```
-project link <a href="https://comics-heroes.netlify.app">https://comics-heroes.netlify.app</a>
-```
+
+ project link <a href="https://comics-heroes.netlify.app">https://comics-heroes.netlify.app</a>
+
 ## Project setup
 ```
 yarn install
